@@ -1,26 +1,20 @@
 //your JS code here. If required.
-let changeBtn = document.getElementById("change_button");
-let resetBtn = document.getElementById("Reset");
-let gridContainer = document.getElementById("grid-container");
-let gridItem = document.querySelectorAll(".grid-item");
-let blockId = document.getElementById("block_id").value;
-let color = document.getElementById("colour_id").value;
+function cells() {
+  const arr = [];
+  for (let i = 1; i <= 9; i++) arr.push(document.getElementById(String(i)));
+  return arr;
+}
 
-changeBtn.addEventListener("click", () => {
-	gridItem.forEach(item =>{
-		item.style.backgroundColor = "transparent";
-	})
+function resetAll() {
+  cells().forEach((el) => (el.style.backgroundColor = "transparent"));
+}
 
-	if(blockId>= 1 && blockId<=9){
-		color.style.backgroundColor = color;
-	}else{
-		alert("Enter valid number");
-	}
-})
-resetBtn.addEventListener("click", () => {
-	item.forEach(item => {
-		item.style.backgroundColor = "transparent";
-	})
-	blockId.value= "";
-	color.value="";
-})
+document.getElementById("change_button").addEventListener("click", () => {
+  const id = document.getElementById("block_id").value.trim();
+  const color = document.getElementById("colour_id").value.trim();
+  resetAll();
+  const cell = document.getElementById(id);
+  if (cell && color) cell.style.backgroundColor = color;
+});
+
+document.getElementById("reset_button").addEventListener("click", resetAll);
