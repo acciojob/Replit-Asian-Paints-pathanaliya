@@ -1,1 +1,25 @@
 /*  your css code here. If applicable */
+.grid-container{
+	display:grid;
+	grid-template-columns: repeat(3, 100px);
+	grid-template-rows: repeat(3, 100px);
+	gap: 5px;
+	margin-bottom: 20px;
+}
+.grid-item{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid black;
+	font-size:20px;
+	background-color:transparent;
+}
+input{
+	margin: 5px;
+	width: 150px;
+}
+button{
+	margin: 5px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
