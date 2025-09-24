@@ -1,4 +1,3 @@
-//your JS code here. If required.
 function cells() {
   const arr = [];
   for (let i = 1; i <= 9; i++) arr.push(document.getElementById(String(i)));
@@ -6,7 +5,7 @@ function cells() {
 }
 
 function resetAll() {
-  cells().forEach((el) => (el.style.backgroundColor = "transparent"));
+  cells().forEach(el => (el.style.backgroundColor = "transparent"));
 }
 
 document.getElementById("change_button").addEventListener("click", () => {
